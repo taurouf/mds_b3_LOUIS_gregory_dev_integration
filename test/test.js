@@ -6,11 +6,10 @@ const expect = chai.expect
 
 chai.use(chaiHttp)
 
-// ---> DEBUT
-/**
-  * Génération des nouvelles couleurs et enregistrement de ces
-  * couleurs dans un tableau.
-  */
+// START
+
+// Génération des nouvelles couleurs et enregistrement des couleurs dans un tableau.
+
 const newValues = []
 const colorKey = 'NEW_COLOR_'
 let nextCursor = 0;
@@ -25,7 +24,7 @@ const newColor = payloadColor();
 const getCurrentCulor = () => {
   return nextCursor > 0 ? `${colorKey}${nextCursor - 1}` : `${colorKey}O`
 }
-// <-- FIN
+// END
 
 it('should return all colors', function (done) {
   const expectedColors = ['RED', 'GREEN', 'BLUE'];
